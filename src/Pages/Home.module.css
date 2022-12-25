@@ -1,35 +1,52 @@
 .home{
     border: 2px solid red;
     max-width: 90%;
-    margin: 0 auto;
     height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center !important;
+}
+.img{
+    border: 1px solid red;
+    max-height: 70vh;
+    text-align: center;
+    padding: 0.5rem;    
+}
+.img img{
+    max-width:100%;
+    max-height: 65vh;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: rotation 6s infinite linear;
+}
+.slogan{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
-.home main{
-    height: 50%;
-    text-align: center;
 
-}
-.heading{
-    font-size: 5rem;
-    font-weight: bold;
-}
 .contain{
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight:300;
+    transition-duration: 1s;
 }
 .orderBtn{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    transition-duration: 1s;
 }
 
-@media only screen and (max-width: 1100px) {
-    .heading{
-        font-size: 4.5rem;
-        font-weight: bold;
-        transition-duration: 1s;
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
     }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+@media only screen and (max-width: 1100px) {
     .contain{
         font-size: 3.5rem;
         font-weight:300;
@@ -41,10 +58,6 @@
     }
 }
 @media only screen and (max-width: 900px) {
-    .heading{
-        font-size: 4rem;
-        font-weight: bold;
-    }
     .contain{
         font-size: 3rem;
         font-weight:300;
@@ -53,10 +66,9 @@
         font-size: 1.5rem;
     }
 }
-@media only screen and (max-width: 600px) {
-    .heading{
-        font-size: 3.5rem;
-        font-weight: bold;
+@media only screen and (max-width: 767px) {
+    .slogan{
+        margin-bottom: 0.5rem;
     }
     .contain{
         font-size: 2.5rem;

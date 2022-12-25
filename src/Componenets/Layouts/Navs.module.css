@@ -1,3 +1,12 @@
+.navBrand{
+    text-decoration: inherit ;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fa4f4f;
+}
+.navBrand:hover{
+    color: #fa4f4f;
+}
 .navItems2{
     align-items: center;
 }
