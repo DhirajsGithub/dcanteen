@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import classes from "./Home.module.css";
 import Button from "react-bootstrap/Button";
-import About from "./About";
-import Review from "./Review";
+import About from "../Componenets/Home_Components/About";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Service from "../Componenets/Home_Components/Service";
+import Review from "../Componenets/Home_Components/Review"
 
 const Home = () => {
   return (
@@ -36,8 +37,9 @@ const Home = () => {
       </div>
       <div>
       </div>
+      <Service />
       <About />
-      <Review />
+     <Review />
     </Fragment>
   );
 };

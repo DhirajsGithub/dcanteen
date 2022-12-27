@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette");
+
+.service{
+    border: 2px solid red;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.service .heading{
+    text-align: center;
+}
+.service h1{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    background-color: rgba(245, 245, 220, 0.362);
+    color: white;
+    font-family: "Courgette";
+    margin: 0;
+}
+.service i{
+    font-size: 2rem;
+}
+.cardTitle{
+    text-align: center;
+}
+.cardHeader{
+    font-family: "Courgette";
+    font-size: large;
+}
+.cardText{
+    font-family: sans-serif;
+}
+.col{
+    transition-duration: 0.5s;
+}
+.col:hover{
+   transform: scale(1.05);
+   transition-duration: 0.5s;
+}
+.row{
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: rgba(245, 245, 220, 0.362);
+}
