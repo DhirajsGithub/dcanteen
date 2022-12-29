@@ -1,0 +1,15 @@
+.review{
+    border: 2px solid red;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.list{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width : 990px){
+    .list{
+        display: block;
+    }
+}
