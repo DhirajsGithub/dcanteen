@@ -1,0 +1,23 @@
+.tables{
+    background-color: rgba(255, 255, 255, 0.588);
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
+    /* border: 2px solid #fff; */
+}
+.card i{
+    color: #d6d6d6;
+
+}
+.card img{
+    height: 40%;
+}
+.cardImg img{
+    height: 60 !important;
+}
+.card{
+    transition-duration: 0.5s;
+}
+.card:hover{
+    transform: scale(1.08);
+    transition-duration: 0.5s;
+}

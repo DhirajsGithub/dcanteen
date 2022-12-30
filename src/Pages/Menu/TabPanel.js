@@ -11,9 +11,9 @@ const TabPanel = (props) => {
       "http://webdesign-finder.com/marco-polo/wp-content/uploads/2017/06/Meat_Meals-1024x1024.jpg",
     ];
     let activeMenu = event.target.id.slice(8);
-    let activeMenuId = event.target.id.slice(6, 8);
-    let activeMenuImg = activeMenuImgUrl[+activeMenuId];
-    props.ChangeActiveMenu({ activeMenu, activeMenuImg });
+    let activeMenuId = +event.target.id.slice(6, 8);
+    let activeMenuImg = activeMenuImgUrl[activeMenuId];
+    props.ChangeActiveMenu({ activeMenu, activeMenuImg, activeMenuId });
   };
   return (
     <Tabs
@@ -22,15 +22,14 @@ const TabPanel = (props) => {
       className={`mb-3 ${classes.panelTabs}`}
       justify
       onClick={handleActiveMenu}
+     variant="tabs"
+     
     >
-      <Tab eventKey="0 Deserts & Snacks" title="Deserts & Snacks">
-        <div name="Deserts & Snacks">Deserts lorem ipsum and shit</div>
+      <Tab style={{backgroundColor : "red"}} eventKey="0 Deserts & Snacks" title="Deserts & Snacks">
       </Tab>
       <Tab eventKey="1 Drinks & Juices" title="Drinks & Juices">
-        Drinks lorem ipsum and shit
       </Tab>
       <Tab eventKey="2 Meat & Meals" title="Meat & Meals">
-        Meat lorem ipsum and shit
       </Tab>
       {/* <Tab eventKey="contact" title="Contact">
       lorem ipsum and shit

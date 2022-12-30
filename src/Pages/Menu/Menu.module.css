@@ -3,7 +3,7 @@
     border: 2px solid red;
     max-width: 90%;
     margin: 0 auto;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .banner{
     max-width: 100%;
@@ -43,8 +43,15 @@
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
 }
-
-@media only screen and (max-width : 685px){
+@media only screen and (max-width : 991px){
+    .menuName{
+        top: 4%;
+    }
+}
+@media only screen and (max-width : 767px){
+    .menuName{
+        top: 2%;
+    }
     .menuName h1{
         text-align: center;
         color: white;
