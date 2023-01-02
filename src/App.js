@@ -8,6 +8,7 @@ import Menu from './Pages/Menu/Menu';
 import OrderOnline from './Pages/OrderOnline';
 import Service from './Componenets/Home_Components/Service'
 import Footer from './Componenets/Footer';
+import Cart from './Pages/Cart';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" render={() => <Navigate to="/home" />} element={<Home />} />
         {/* <Route path='/about' element={<About />} /> */}
         <Route path='/menu' element={<Menu />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/order_online' element={<OrderOnline />} />
       </Routes>
       <Footer />

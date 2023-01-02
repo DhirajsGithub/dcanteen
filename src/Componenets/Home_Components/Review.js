@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import ReviewCard from './ReviewCard'
-import classes from './Review.module.css'
-
 
 const Review = () => {
   const reviews = [

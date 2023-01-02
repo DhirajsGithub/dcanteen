@@ -19,6 +19,9 @@
     font-family: "Nunito",sans-serif;
 
 }
+.cartBtn{
+    margin: 0 8px;
+}
 .navItem:hover{
     color: rgb(137, 137, 137) ;
     transition-duration: 0.3s;
@@ -38,6 +41,12 @@
         align-items:flex-start;
     }
     .navItem{
+        margin-top: 0.5rem;
+    }
+    .cartBtn{
+        margin: 0.5rem 0 0 0  ;
+    }
+    .active{
         margin-top: 0.5rem;
     }
 }

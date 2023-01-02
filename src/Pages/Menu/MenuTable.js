@@ -3,8 +3,9 @@ import classes from "./MenuTable.module.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from 'react-bootstrap/Button';
-
+import Button from "react-bootstrap/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../Store/Api";
 
 const MenuTable = (props) => {
   const menuItem = [
@@ -161,14 +162,25 @@ const MenuTable = (props) => {
     ],
   ];
 
-  const [windowWidth, setWindowWidth] = useState(0);
-  console.log(windowWidth);
+  // debouncing need to add
+  const [items, setItems] = useState({});
+  const ctx = useContext(AuthContext)
+  console.log(ctx.items)
+  const handleItem = (item) => {
+    ctx.handleItemsCount();
+    ctx.handleItems(item);
+  };
+  // const handleOnClick = (func) => {
+  //   console.log("shit2");
+  //   let timeOutId;
+  //   return function (...args) {
+  //     clearTimeout(timeOutId);
+  //     timeOutId = setTimeout(() => {
+  //       func.call(this, ...args);
+  //     }, 1000);
+  //   };
+  // };
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth);
-    });
-  }, []);
   return (
     <div className={classes.tables}>
       <Row xs={1} lg={4} md={2} className="g-4">
@@ -176,15 +188,20 @@ const MenuTable = (props) => {
           return (
             <Col key={index}>
               <Card className={classes.card} bg="dark" text="light">
-                <Card.Img className={classes.cardImg} variant="top" src={item.imgUrl} />
+                <Card.Img
+                  className={classes.cardImg}
+                  variant="top"
+                  src={item.imgUrl}
+                />
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
-                  <Button variant="secondary">Add to <i className="fa-solid fa-cart-arrow-down"></i></Button>{' '}
+                  <Card.Text>{item.describe}</Card.Text>
+                  <Button
+                    onClick={(()=>{handleItem(item)})}
+                    variant="secondary"
+                  >
+                    Add to <i className="fa-solid fa-cart-arrow-down"></i>
+                  </Button>{" "}
                 </Card.Body>
               </Card>
             </Col>
