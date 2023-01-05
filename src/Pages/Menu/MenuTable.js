@@ -18,6 +18,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-18-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CARROT CUPCAKES",
@@ -26,6 +27,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-19-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CREME BRULEE",
@@ -34,6 +36,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-20-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -42,6 +45,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -50,6 +54,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -58,6 +63,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
     ],
     [
@@ -68,6 +74,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-22-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "MILKSHAKES",
@@ -76,6 +83,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-20-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "SAKE SPIRTZER",
@@ -84,6 +92,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/09/drink-5-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "ICED COFFEE",
@@ -92,6 +101,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/09/drink-2-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -100,6 +110,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -108,6 +119,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
     ],
     [
@@ -118,6 +130,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-6-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "SPICY CHICKEN WRAP",
@@ -126,6 +139,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-8-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "MASALA HOT DOG",
@@ -134,6 +148,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-13-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "BLACK BUN BURGER",
@@ -142,6 +157,7 @@ const MenuTable = (props) => {
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-3-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -150,6 +166,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
       {
         name: "CHOCOLATE CAKE",
@@ -158,6 +175,7 @@ const MenuTable = (props) => {
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
+        quantity: 1,
       },
     ],
   ];
@@ -166,17 +184,23 @@ const MenuTable = (props) => {
   const ctx = useContext(AuthContext);
   console.log(ctx.items);
 
+  const isItemPresent = (item) => {
+    ctx.items?.some((i) => {
+      return i.name == item.name;
+    });
+  };
+
   const handleItem = (item) => {
     setItem(item);
   };
-  
+
   useEffect(() => {
     let delay = 1000;
     if (Object.keys(item).length >= 1) {
       props.AddToCartBtn(true, item);
       let timeout = setTimeout(() => {
-        ctx.handleItemsCount();
-        ctx.handleItems(item);
+        ctx.handleItemQuantity(item)
+        console.log(isItemPresent())
 
         props.AddToCartBtn(false, item);
       }, delay);
