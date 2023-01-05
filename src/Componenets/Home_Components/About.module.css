@@ -1,6 +1,6 @@
 .about{
     border: 2px solid red;
-    max-width: 90%;
+    max-width: 95%;
     margin: 0 auto;
     /* height: 80vh; */
 }
@@ -18,7 +18,7 @@
     font-family: sans-serif;
 }
 .img img{
-    min-width: 100%;
+    width: 100%;
     object-fit: cover;
     max-height: 70vh;
 }

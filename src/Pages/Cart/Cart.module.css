@@ -1,0 +1,26 @@
+.root{
+    padding: 1rem;
+}
+.items{
+   width: 35rem;
+}
+.summary{
+    width: 35rem;
+}
+.itemsSumary{
+    flex-wrap: wrap;
+    display: flex;
+    height: 80vh;
+    overflow: scroll;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 991px) { 
+    .items{
+        max-width: 35rem;
+        margin: 0 auto;
+    }
+    .itemsSumary{
+        height: 75vh;
+    }
+}

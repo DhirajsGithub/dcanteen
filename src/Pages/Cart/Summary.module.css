@@ -1,0 +1,8 @@
+.summary{
+    max-width: 35rem;
+    position: sticky;
+    top: 0;
+}
+.lastSecRow{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.716);
+}

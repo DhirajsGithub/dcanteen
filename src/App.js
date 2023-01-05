@@ -8,7 +8,7 @@ import Menu from './Pages/Menu/Menu';
 import OrderOnline from './Pages/OrderOnline';
 import Service from './Componenets/Home_Components/Service'
 import Footer from './Componenets/Footer';
-import Cart from './Pages/Cart';
+import Cart from './Pages/Cart/Cart';
 
 
 function App() {

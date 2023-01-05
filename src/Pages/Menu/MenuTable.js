@@ -162,24 +162,30 @@ const MenuTable = (props) => {
     ],
   ];
 
-  // debouncing need to add
-  const [items, setItems] = useState({});
-  const ctx = useContext(AuthContext)
-  console.log(ctx.items)
+  const [item, setItem] = useState({});
+  const ctx = useContext(AuthContext);
+  console.log(ctx.items);
+
   const handleItem = (item) => {
-    ctx.handleItemsCount();
-    ctx.handleItems(item);
+    setItem(item);
   };
-  // const handleOnClick = (func) => {
-  //   console.log("shit2");
-  //   let timeOutId;
-  //   return function (...args) {
-  //     clearTimeout(timeOutId);
-  //     timeOutId = setTimeout(() => {
-  //       func.call(this, ...args);
-  //     }, 1000);
-  //   };
-  // };
+  
+  useEffect(() => {
+    let delay = 1000;
+    if (Object.keys(item).length >= 1) {
+      props.AddToCartBtn(true, item);
+      let timeout = setTimeout(() => {
+        ctx.handleItemsCount();
+        ctx.handleItems(item);
+
+        props.AddToCartBtn(false, item);
+      }, delay);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [item]);
 
   return (
     <div className={classes.tables}>
@@ -197,7 +203,9 @@ const MenuTable = (props) => {
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Text>{item.describe}</Card.Text>
                   <Button
-                    onClick={(()=>{handleItem(item)})}
+                    onClick={() => {
+                      handleItem(item);
+                    }}
                     variant="secondary"
                   >
                     Add to <i className="fa-solid fa-cart-arrow-down"></i>

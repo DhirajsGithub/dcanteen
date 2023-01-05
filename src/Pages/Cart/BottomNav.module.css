@@ -1,0 +1,22 @@
+.root{
+    width: 50% !important;
+    background: rgb(62, 62, 62) !important;
+    margin: 0 auto;
+    display: block !important;
+}
+.placeOrder{
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 0.3rem;
+}
+.placeOrder h1{
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 991px) { 
+    .root{
+        /* display: block !important; */
+        width: 100% !important;
+    }
+ }
