@@ -12,170 +12,188 @@ const MenuTable = (props) => {
     [
       {
         name: "GRANOLA TRIFLES",
-        price: "$11.00",
+        price: 100,
         imgUrl:
           // "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-18-copyright-240x240.jpg",   describe : "This mini delight turns your regular meal into amazing sensation!"
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-18-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 1,
       },
       {
         name: "CARROT CUPCAKES",
-        price: "$9.00",
+       price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-19-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 2,
       },
       {
         name: "CREME BRULEE",
-        price: "$21.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-20-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 3,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 4,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 5,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 6,
       },
     ],
     [
       {
         name: "Beer",
-        price: "$15.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-22-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 7,
       },
       {
         name: "MILKSHAKES",
-        price: "$7.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-20-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 8,
       },
       {
         name: "SAKE SPIRTZER",
-        price: "$5.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/09/drink-5-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 9,
       },
       {
         name: "ICED COFFEE",
-        price: "$6.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/09/drink-2-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 10,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 11,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 12,
       },
     ],
     [
       {
         name: "THE TURKEY BURGER",
-        price: "$18.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-6-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 13,
       },
       {
         name: "SPICY CHICKEN WRAP",
-        price: "$28.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-8-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 14,
       },
       {
         name: "MASALA HOT DOG",
-        price: "$22.00",
+        price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-13-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 15,
       },
       {
         name: "BLACK BUN BURGER",
-        price: "$34.00",
+        price: 100,
         imgUrl:
           "https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-3-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 16,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 17,
       },
       {
         name: "CHOCOLATE CAKE",
-        price: "$14.00",
+       price: 100,
         imgUrl:
           "	https://meals-wheels.themerex.net/wp-content/uploads/2018/06/dish-21-copyright.jpg",
         describe:
           "This mini delight turns your regular meal into amazing sensation!",
         quantity: 1,
+        id: 18,
       },
     ],
   ];
@@ -186,7 +204,7 @@ const MenuTable = (props) => {
 
   const isItemPresent = (item) => {
     ctx.items?.some((i) => {
-      return i.name == item.name;
+      return i.id == item.id;
     });
   };
 
@@ -199,8 +217,8 @@ const MenuTable = (props) => {
     if (Object.keys(item).length >= 1) {
       props.AddToCartBtn(true, item);
       let timeout = setTimeout(() => {
-        ctx.handleItemQuantity(item)
-        console.log(isItemPresent())
+        ctx.handleItemQuantity(item);
+        // console.log(isItemPresent());
 
         props.AddToCartBtn(false, item);
       }, delay);

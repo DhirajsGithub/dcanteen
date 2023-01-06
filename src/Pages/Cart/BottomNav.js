@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import classes from "./BottomNav.module.css";
 import Navbar from "react-bootstrap/Navbar";
 
-const BottomNav = () => {
+const BottomNav = (props) => {
   const [value, setValue] = React.useState(1);
 
   return (
@@ -18,7 +18,7 @@ const BottomNav = () => {
         className={classes.root}
       >
         <div className={classes.placeOrder}>
-          <h1>Rs. 345</h1>
+          <h1>Rs. {props.summaryTotal}</h1>
           <Button variant="contained" color="primary">Place Order</Button>
         </div>
       </BottomNavigation>

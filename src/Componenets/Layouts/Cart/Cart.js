@@ -6,6 +6,8 @@ import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Store/Api';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -16,11 +18,13 @@ const StyledBadge = withStyles((theme) => ({
     },
   }))(Badge);
 
+
 export const Cart = () => {
   const ctx = useContext(AuthContext)
+
     return (
         <IconButton aria-label="cart">
-          <StyledBadge badgeContent={ctx.itemsCount} color="secondary">
+          <StyledBadge badgeContent={ctx.totalQuantity} color="secondary">
             <ShoppingCartIcon />
           </StyledBadge>
         </IconButton>

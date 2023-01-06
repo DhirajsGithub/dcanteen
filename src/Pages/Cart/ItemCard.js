@@ -12,27 +12,21 @@ import {
 import { useState } from "react";
 
 const ItemCard = (props) => {
-  const [quantityNo, setQuantityNo] = useState(1);
+  const [quantityNo, setQuantityNo] = useState(props.item?.quantity);
   return (
     <Card bg="dark" className={classes.card}>
-      <Card.Header as="h5">Pasta sdhfisf skdfj s</Card.Header>
+      <Card.Header as="h5">{props.item?.name}</Card.Header>
       <Card.Body className={classes.cardBody}>
-        {/* <Card.Title>Special title treatment</Card.Title> */}
         <Figure>
           <Figure.Image
             width={170}
             height={180}
             alt="171x180"
-            src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg"
+            src={props.item?.imgUrl}
           />
-          {/* <Figure.Caption>
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </Figure.Caption> */}
         </Figure>
         <div className={classes.actions}>
           <div className={classes.addSub}>
-            
-
             <Fab
             className={classes.fab}
               onClick={() => {

@@ -4,32 +4,35 @@ import { useState } from "react";
 const AuthContext = React.createContext({
   updateItemQuantity : () => {},
   items: [],
-  changeItem: () => {},
+  totalQuantity : 0,
 });
 
 const AuthContextProveider = (props) => {
   const [items, setItems] = useState([]);
-  const [containItemIndex, setContainItemIndex] = useState(-1);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   const isItemPresent = (item)=>{
-    let foundIndex = -1;
-    let isContains = items.some((i, index)=>{
-      let result = i.name == item.name;
-      if(result){
-        foundIndex = index;
-      }
-      setContainItemIndex(foundIndex)
-      return result;
-    })
+    let isContains = items.find((i => i.id == item.id))
     return isContains
   }
 
+  const handleTotalQuantity = ()=>{
+    let q = items.reduce((totalQuantity, curItem)=>{
+      return totalQuantity + curItem.quantity;
+    }, 1)
+    return q
+  }
+
   const handleItemQuantity = (item) => {
-    let isContains = isItemPresent(item);
-    console.log(isContains)
+    let isContains = isItemPresent(item) != undefined ;
+    let q = handleTotalQuantity();
+    setTotalQuantity(q);
     if(isContains){
-      let p = items[containItemIndex];
-      items[containItemIndex] = {...p, quantity : p.quantity + 1}
+      for(let i=0; i<items.length; i++){
+        if(items[i].id == item.id){
+          items[i].quantity +=1;
+        }
+      }
     }else{
       handleItems(item)
     }
@@ -43,7 +46,7 @@ const AuthContextProveider = (props) => {
   };
   return (
     <AuthContext.Provider
-      value={{ items, handleItems, handleItemQuantity }}
+      value={{ items, handleItems, handleItemQuantity, totalQuantity }}
     >
       {props.children}
     </AuthContext.Provider>
