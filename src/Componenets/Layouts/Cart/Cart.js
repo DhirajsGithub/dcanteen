@@ -1,32 +1,29 @@
-import classes from './Cart.module.css'
-import React from 'react';
-import Badge from '@material-ui/core/Badge';
-import { withStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { useContext } from 'react';
-import { AuthContext } from '../../../Store/Api';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React from "react";
+import Badge from "@material-ui/core/Badge";
+import { withStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { useContext } from "react";
+import { AuthContext } from "../../../Store/Api";
 
 const StyledBadge = withStyles((theme) => ({
-    badge: {
-      right: -3,
-      top: 13,
-      border: `2px solid ${theme.palette.background.paper}`,
-      padding: '0 4px',
-    },
-  }))(Badge);
-
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}))(Badge);
 
 export const Cart = () => {
-  const ctx = useContext(AuthContext)
+  const ctx = useContext(AuthContext);
+  console.log(ctx.totalQuantity);
 
-    return (
-        <IconButton aria-label="cart">
-          <StyledBadge badgeContent={ctx.totalQuantity} color="secondary">
-            <ShoppingCartIcon />
-          </StyledBadge>
-        </IconButton>
-      );
-}
+  return (
+    <IconButton aria-label="cart">
+      <StyledBadge badgeContent={ctx.totalQuantity} color="secondary">
+        <ShoppingCartIcon />
+      </StyledBadge>
+    </IconButton>
+  );
+};

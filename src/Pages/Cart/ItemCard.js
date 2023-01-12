@@ -10,9 +10,23 @@ import {
   RemoveCircleOutline,
 } from "@material-ui/icons";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../Store/Api";
+import { useEffect } from "react";
 
 const ItemCard = (props) => {
-  const [quantityNo, setQuantityNo] = useState(props.item?.quantity);
+  const [quantity, setQuantity] = useState(props.item?.quantity);
+
+  const ctx = useContext(AuthContext);
+
+  const handleAddQuantity = (item) => {
+    ctx.handleAddQuantity(item);
+  };
+
+  const handleRemoveQuantity = (item) => {
+    ctx.handleRemoveQuantity(item);
+  };
+
   return (
     <Card bg="dark" className={classes.card}>
       <Card.Header as="h5">{props.item?.name}</Card.Header>
@@ -28,15 +42,16 @@ const ItemCard = (props) => {
         <div className={classes.actions}>
           <div className={classes.addSub}>
             <Fab
-            className={classes.fab}
+              className={classes.fab}
               onClick={() => {
-                setQuantityNo((prvState) => {
+                setQuantity((prvState) => {
                   if (prvState > 0) {
                     return prvState - 1;
                   } else {
                     return prvState;
                   }
                 });
+                handleRemoveQuantity(props.item);
               }}
               size="small"
               color="primary"
@@ -44,17 +59,18 @@ const ItemCard = (props) => {
             >
               <RemoveCircleOutline />
             </Fab>
-            <span className={classes.quantity}>{quantityNo}</span>
+            <span className={classes.quantity}>{props.item?.quantity}</span>
             <Fab
-            className={classes.fab}
+              className={classes.fab}
               onClick={() => {
-                setQuantityNo((prvState) => {
+                setQuantity((prvState) => {
                   if (prvState < 100) {
                     return prvState + 1;
                   } else {
                     return prvState;
                   }
                 });
+                handleAddQuantity(props.item);
               }}
               size="small"
               color="primary"
@@ -62,10 +78,18 @@ const ItemCard = (props) => {
             >
               <AddCircleOutlineOutlined />
             </Fab>
-            
           </div>
 
-          <Button className={classes.remove} size="sm" variant="danger">Remove</Button>
+          <Button
+            onClick={() => {
+              ctx.handleRemoveItem(props.item);
+            }}
+            className={classes.remove}
+            size="sm"
+            variant="danger"
+          >
+            Remove
+          </Button>
         </div>
       </Card.Body>
     </Card>

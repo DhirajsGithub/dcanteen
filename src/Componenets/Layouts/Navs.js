@@ -32,14 +32,7 @@ const Navs = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? classes.active : classes.navItem
-              }
-              to="/service"
-            >
-              Service
-            </NavLink>
+
             <NavLink
               className={(navData) =>
                 navData.isActive ? classes.active : classes.navItem
@@ -48,9 +41,14 @@ const Navs = () => {
             >
               Menu
             </NavLink>
-            {/* <NavLink className={(navData)=> navData.isActive ? classes.active : classes.navItem} to="/about">
-              About us
-            </NavLink> */}
+            <NavLink
+              className={(navData) =>
+                navData.isActive ? classes.active : classes.navItem
+              }
+              to="/profile"
+            >
+              <i className="fa-solid fa-user"></i>
+            </NavLink>
           </Nav>
           <Nav className={classes.navItems2}>
             <NavLink className={classes.navItem}>

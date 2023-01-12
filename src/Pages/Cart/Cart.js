@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Cart = () => {
-  const [t, setT] = useState(0)
-  const summaryTotal = (total)=>{
+  const [t, setT] = useState(0);
+  const summaryTotal = (total) => {
     setT(total);
-  }
+  };
   const ctx = useContext(AuthContext);
   const cartIsEmpty = (
     <div>
@@ -34,7 +34,9 @@ const Cart = () => {
           })}
         </div>
 
-        <div className={classes.summary}>{ctx.items.length > 0 && <Summary summaryTotal={summaryTotal} />}</div>
+        <div className={classes.summary}>
+          {ctx.items.length > 0 && <Summary summaryTotal={summaryTotal} />}
+        </div>
       </div>
       <footer>{ctx.items.length > 0 && <BottomNav summaryTotal={t} />}</footer>
     </div>
